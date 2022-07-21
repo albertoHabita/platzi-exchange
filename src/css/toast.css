@@ -1,0 +1,239 @@
+/*-----------------------------------*\
+	Toast
+	A Simple CSS Framework
+	=================================
+
+	Values you may want to change:
+	- .container { max-width:; }
+	- p { margin-bottom:; }
+	- html { font:; }
+	
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+	$RESET
+\*-----------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*-----------------------------------*\
+	$GRID
+\*-----------------------------------*/
+
+/*.container { max-width: 960px; margin: 0 auto; padding: 0 30px; padding: 0 1.5rem;}*/
+
+/* Contenedor pagina index */
+.container_index {max-width: auto; margin: 0 auto;	padding: 10px 0 10px 10px;	background-color:#fff;	border-top:6px solid #accbe0;}
+
+/* Contenedores Prisma */
+.container {max-width: auto; margin: 0 auto;	padding: 10px 0 10px 10px;	background-color:#fff;	border-top:6px solid #accbe0;}
+.container-pequeño {max-width: 450px; max-height: 350px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff;	border-top:6px solid #accbe0;}
+.container-mediano {max-width: 700px; max-height: 600px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff;	border-top:6px solid #accbe0;}
+.container-grande {max-width: 800px; max-height: 1000px;	margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #accbe0;}
+.container-alerta {max-width: 400px; max-height: 600px;	margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #accbe0;}
+.container-sin-nav {max-width: 1280px; margin: 0 auto; padding: 10px 0 10px 10px;	background-color:#fff;	border-top:6px solid #accbe0;}
+
+/* Contenedores Esecretaria */
+.container-esec {max-width: auto; margin: 0 auto;	padding: 10px 0 10px 10px;	background-color:#fff;	border-top:6px solid #D75A20;}
+.container-esec-pequeño {max-width: 450px; max-height: 350px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff; border-top:6px solid #D75A20;}
+.container-esec-mediano {max-width: 700px; max-height: 600px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff; border-top:6px solid #D75A20;}
+.container-esec-grande {max-width: 800px; max-height: 1000px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #D75A20;}
+.container-esec-alerta {max-width: 400px; max-height: 600px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #D75A20;}
+
+/* Contenedores Preinscripcion */
+.container-prein {max-width: auto; margin: 0 auto;	padding: 10px 0 10px 10px;	background-color:#fff;	border-top:6px solid #a58f7e;}
+.container-prein-pequeño {max-width: 450px; max-height: 350px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff; border-top:6px solid #a58f7e;}
+.container-prein-mediano {max-width: 700px; max-height: 600px; margin: 0 auto; padding: 10px 0 0 10px; background-color:#fff; border-top:6px solid #a58f7e;}
+.container-prein-grande {max-width: 800px; max-height: 1000px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #a58f7e;}
+.container-prein-alerta {max-width: 400px; max-height: 600px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff; border-top:6px solid #a58f7e;}
+
+/* Contenedores prisma entorno PRE */
+.containerPRE {max-width: auto; margin: 0 auto; padding: 10px 0 10px 10px; background-color:#fff;	border-top:6px solid #73bc78;}
+.containerPRE-pequeño {max-width: 450px; max-height: 350px;	margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff;	border-top:6px solid #73bc78;}
+.containerPRE-mediano {max-width: 700px; max-height: 600px;	margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff;	border-top:6px solid #73bc78;}
+.containerPRE-grande {max-width: 800px;	max-height: 1000px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff;	border-top:6px solid #73bc78;}
+.containerPRE-alerta {max-width: 400px;	max-height: 600px; margin: 0 auto;	padding: 10px 0 0 10px;	background-color:#fff;	border-top:6px solid #73bc78;}
+
+/* Scroll */
+.popup-scroll-grande {overflow-y: scroll; max-height: 550px; padding:0 10px 0 0; margin-bottom: 20px;}
+.popup-scroll-mediano {overflow-y: scroll; max-height: 300px; padding:0 10px 0 0; margin-bottom: 20px;}
+.popup-scroll-pequeño {overflow-y: scroll; max-height: 225px; padding:0 10px 0 0; margin-bottom: 20px;}
+.popup-scroll-mini {overflow-y: scroll; max-height: 110px; padding:0 10px 0 0; margin-bottom: 20px;}
+
+/* .grid { margin-left: -3%; max-width: 105%;} */
+
+.grid { margin-left: 0%; max-width: 100%;}
+
+.unit {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	/*margin-left: 3%;*/
+	margin-left: 1%;
+	margin-right: 1%;
+    /* margin-right: -.25em;*/
+	/* Clearfix */
+	overflow: hidden;
+	*overflow: visible;
+}
+
+.span-grid {width: 96.4%;}
+
+.one-of-two {width:47.05%;}
+
+.one-of-three {width:30.59%;}
+.two-of-three {width:63.45%;}
+
+.one-of-four {width:22.38%;}
+.three-of-four {width:71.7%;}
+
+.one-of-five {width:17.45%;}
+.two-of-five {width:37.20%;}
+.three-of-five {width:57%;}
+.four-of-five {width:76.65%;}
+
+
+/* Parte nueva a�adida para simular hasta 10 columnas*/
+.one-of-six {width:14.14%;}
+.five-of-six {width:79.95%;}
+
+.one-of-seven {width:11.80%;}
+.two-of-seven {width:25.9%;}
+.three-of-seven {width:40%;}
+.four-of-seven {width:54%;}
+.five-of-seven {width:68.2%;}
+.six-of-seven {width:82.3%;}
+
+.one-of-eight {width:10.06%;}
+.three-of-eight {width:34.8%;}
+.five-of-eight {width:59.6%;}
+.seven-of-eight {width:84.05%;}
+
+.one-of-nine {width:8.69%;}
+.two-of-nine {width:19.7%;}
+.four-of-nine {width:41.3%;}
+.five-of-nine {width:53.12%;}
+.seven-of-nine {width:74.6%;}
+.nine-of-nine {width:85.43%;}
+
+.one-of-ten {width:7.59%;}
+.three-of-ten {width:27.30%;}
+.seven-of-ten {width:66.90%;}
+.nine-of-ten {width:86.53%;}
+
+
+@media screen and (max-width: 650px) {
+	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin-left: 0;
+		display: block;
+	}
+	
+	#menu-izq {width: 45%}
+	.contenido {width: 100%}
+	#menu-usuario {display:none}
+		
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ 	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin-left: 0;
+		display: block;
+	}
+	
+	#menu-izq {width: 45%}
+	.contenido {width: 100%}
+	
+}
+
+/*
+@media screen and (max-width: 650px) {
+	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin-left: 0;
+		display: block;
+	}
+}
+*/
+/*-----------------------------------*\
+	$TYPE
+
+	Works off the assumption of a 1.5
+	line height @ 20px. Again, change
+	as necessary.
+\*-----------------------------------*/
+
+p, .p, ul, ol, hr, table, pre,
+.alpha, .beta {
+	margin-bottom: 10px;
+	margin-bottom: 1.5rem;
+}
+
+h1, .alpha {
+	line-height: 1;
+}
+
+h2, .beta {
+	line-height: 1.5;
+}
+
+h3, .alpha {
+	line-height: 1.5;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	margin-top: -1px;
+}
+
+/*-----------------------------------*\
+	$MAIN
+\*-----------------------------------*/
+
+html {
+	font: 125%/1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 650px) {
+	html {
+		font-size: 100%;
+	}
+}	
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	html {
+		font-size: 100%;
+	}
+}	
+
+/*@media screen and (max-width: 650px) {
+	html {
+		font-size: 100%;
+	}
+}*/
