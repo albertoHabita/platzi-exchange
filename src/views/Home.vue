@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="principal_contenido">
     <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
-    <px-assets-table v-if="!isLoading" :assets="assets" />
+    <px-assets-table v-if="!isLoading" :estudiants="estudiants" />
   </div>
 </template>
 
@@ -17,17 +17,19 @@ export default {
   data() {
     return {
       isLoading: false,
-      assets: [],
+      estudiants: [],
     };
   },
 
   created() {
     this.isLoading = true;
 
-    api
+    /*api
       .getAssets()
       .then((assets) => (this.assets = assets))
-      .finally(() => (this.isLoading = false));
+      .finally(() => (this.isLoading = false));*/
+    this.estudiants = api.getAssets();
+    this.isLoading = false;
   },
 };
 </script>
