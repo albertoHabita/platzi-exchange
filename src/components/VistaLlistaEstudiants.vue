@@ -15,7 +15,7 @@
         :numDocumentEst="a.num_document_est"
         :nomEst="a.nom_est"
         :cognomsEst="a.cognoms_est"
-        :classe="estudiants.indexOf(a)"
+        :index="estudiants.indexOf(a)"
       />
     </tbody>
   </table>

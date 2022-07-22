@@ -1,5 +1,5 @@
 <template>
-  <tr :class="classe">
+  <tr :class="getClasse">
     <td>{{ numDocumentEst }}</td>
     <td>{{ nomEst }}</td>
     <td>{{ cognomsEst }}</td>
@@ -19,6 +19,16 @@
 export default {
   name: "VistaLlistaItemEstudiants",
 
+  computed: {
+    getClasse() {
+      if (this.index % 2 === 0) {
+        return "par";
+      } else {
+        return "impar";
+      }
+    },
+  },
+
   props: {
     numDocumentEst: {
       type: String,
@@ -32,7 +42,7 @@ export default {
       type: String,
       default: "",
     },
-    classe: {
+    index: {
       type: Number,
       default: 0,
     },
