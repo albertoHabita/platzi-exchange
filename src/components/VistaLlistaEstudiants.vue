@@ -9,31 +9,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="a in estudiants"
-        :key="a.id"
-        :class="estudiants.indexOf(a) % 2 === 0 ? 'par' : 'impar'"
-      >
-        <td>{{ a.num_document_est }}</td>
-        <td>{{ a.nom_est }}</td>
-        <td>{{ a.cognoms_est }}</td>
-        <td class="derecha">
-          <input
-            class="boton b_rojo"
-            type="submit"
-            id="boton"
-            name="boton"
-            value="Elimina"
-          />
-        </td>
-      </tr>
+      <vista-llista-item-estudiants
+        v-for="(a, index) in estudiants"
+        :key="index"
+        :numDocumentEst="a.num_document_est"
+        :nomEst="a.nom_est"
+        :cognomsEst="a.cognoms_est"
+        :classe="estudiants.indexOf(a)"
+      />
     </tbody>
   </table>
 </template>
 
 <script>
 export default {
-  name: "PxAssetsTable",
+  name: "VistaLlistaEstudiants",
+
+  components: {
+    VistaLlistaItemEstudiants: () => import("./VistaLlistaItemEstudiants.vue"),
+  },
 
   data() {
     return {

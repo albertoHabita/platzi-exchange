@@ -182,15 +182,9 @@ export default {
       const id = this.$route.params.id;
       this.isLoading = true;
 
-      Promise.all([
-        api.getAsset(id),
-        api.getAssetHistory(id),
-        api.getMarkets(id),
-      ])
-        .then(([asset, history, markets]) => {
-          this.asset = asset;
-          this.history = history;
-          this.markets = markets;
+      Promise.all([api.estudiant(id)])
+        .then(([estudiant]) => {
+          this.estudiant = estudiant;
         })
         .finally(() => (this.isLoading = false));
     },

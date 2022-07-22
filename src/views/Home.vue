@@ -1,18 +1,18 @@
 <template>
   <div class="principal_contenido">
     <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
-    <px-assets-table v-if="!isLoading" :estudiants="estudiants" />
+    <vista-llista-estudiants v-if="!isLoading" :estudiants="estudiants" />
   </div>
 </template>
 
 <script>
 import api from "@/api";
-import PxAssetsTable from "@/components/PxAssetsTable";
+import VistaLlistaEstudiants from "@/components/VistaLlistaEstudiants";
 
 export default {
   name: "HomeView",
 
-  components: { PxAssetsTable },
+  components: { VistaLlistaEstudiants },
 
   data() {
     return {
@@ -23,13 +23,10 @@ export default {
 
   created() {
     this.isLoading = true;
-
-    /*api
-      .getAssets()
-      .then((assets) => (this.assets = assets))
-      .finally(() => (this.isLoading = false));*/
-    this.estudiants = api.getAssets();
-    this.isLoading = false;
+    api
+      .getEstudiants()
+      .then((estudiants) => (this.estudiants = estudiants))
+      .finally(() => (this.isLoading = false));
   },
 };
 </script>
