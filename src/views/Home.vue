@@ -25,8 +25,6 @@ export default {
       eventManager: {
         clickElimina(index) {
           const vIndex = this.estudiants.findIndex(function (valor) {
-            console.log(index);
-            console.log(valor.id);
             return valor.id == index;
           });
           console.log(vIndex);
