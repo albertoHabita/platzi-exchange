@@ -24,11 +24,17 @@ export default {
       estudiants: [],
       eventManager: {
         clickElimina(index) {
-          this.estudiants.splice(this.estudiants.indexOf(index), 1);
+          const vIndex = this.estudiants.findIndex(function (valor) {
+            console.log(index);
+            console.log(valor.id);
+            return valor.id == index;
+          });
+          console.log(vIndex);
+          this.estudiants.splice(vIndex, 1);
         },
-        veureDetalls(index) {
+        /*veureDetalls(index) {
           this.estudiants.splice(this.estudiants.indexOf(index), 1);
-        },
+        },*/
       },
     };
   },
