@@ -1,7 +1,11 @@
 <template>
   <div class="principal_contenido">
     <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
-    <vista-llista-estudiants v-if="!isLoading" :estudiants="estudiants" />
+    <vista-llista-estudiants
+      v-if="!isLoading"
+      :estudiants="estudiants"
+      :eventManager="eventManager"
+    />
   </div>
 </template>
 
@@ -18,6 +22,14 @@ export default {
     return {
       isLoading: false,
       estudiants: [],
+      eventManager: {
+        clickElimina(index) {
+          this.estudiants.splice(this.estudiants.indexOf(index), 1);
+        },
+        veureDetalls(index) {
+          this.estudiants.splice(this.estudiants.indexOf(index), 1);
+        },
+      },
     };
   },
 
@@ -26,6 +38,7 @@ export default {
     api
       .getEstudiants()
       .then((estudiants) => (this.estudiants = estudiants))
+      .then(() => (this.eventManager.estudiants = this.estudiants))
       .finally(() => (this.isLoading = false));
   },
 };

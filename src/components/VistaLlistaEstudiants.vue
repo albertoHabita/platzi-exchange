@@ -16,6 +16,9 @@
         :nomEst="a.nom_est"
         :cognomsEst="a.cognoms_est"
         :index="estudiants.indexOf(a)"
+        :codiModel="a.id"
+        :eventManager="eventManager"
+        :model="a"
       />
     </tbody>
   </table>
@@ -40,6 +43,10 @@ export default {
     estudiants: {
       type: Array,
       default: () => [],
+    },
+    eventManager: {
+      type: Object,
+      default: () => {},
     },
   },
 

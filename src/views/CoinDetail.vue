@@ -102,7 +102,7 @@
 
 <script>
 import api from "@/api";
-import PxButton from "@/components/PxButton";
+import PxButton from "@/components/BotonRojo";
 
 export default {
   name: "CoinDetail",

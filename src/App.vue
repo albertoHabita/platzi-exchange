@@ -2,7 +2,6 @@
   <main>
     <div class="container">
       <div class="grid">
-        <px-header />
         <div id="img-header-min" class="unit span-grid"></div>
         <div id="menu-sup">
           <ul>
@@ -102,11 +101,8 @@
 </template>
 
 <script>
-import PxHeader from "@/components/PxHeader";
-
 export default {
   name: "app",
-  components: { PxHeader },
 };
 </script>
 

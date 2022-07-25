@@ -1,24 +1,23 @@
 <template>
-  <tr :class="getClasse">
+  <tr :class="getClasse" @click="clickItem">
     <td>{{ numDocumentEst }}</td>
     <td>{{ nomEst }}</td>
     <td>{{ cognomsEst }}</td>
     <td class="derecha">
-      <input
-        class="boton b_rojo"
-        type="submit"
-        id="boton"
-        name="boton"
-        value="Elimina"
-      />
+      <BotonRojo
+        @click-btn-rojo="eventManager.clickElimina($event)"
+        :text="textBoton"
+        :codiModel="codiModel"
+      ></BotonRojo>
     </td>
   </tr>
 </template>
 
 <script>
+import BotonRojo from "@/components/BotonRojo";
 export default {
   name: "VistaLlistaItemEstudiants",
-
+  components: { BotonRojo },
   computed: {
     getClasse() {
       if (this.index % 2 === 0) {
@@ -29,7 +28,17 @@ export default {
     },
   },
 
+  data() {
+    return {
+      textBoton: "Eliminar", //se podría calcular la etiqueta, por ejemplo
+    };
+  },
+
   props: {
+    codiModel: {
+      type: String,
+      default: "",
+    },
     numDocumentEst: {
       type: String,
       default: "",
@@ -45,6 +54,20 @@ export default {
     index: {
       type: Number,
       default: 0,
+    },
+    eventManager: {
+      type: Object,
+      default: () => {},
+    },
+    model: {
+      type: Object,
+      default: () => {},
+    },
+  },
+
+  methods: {
+    clickItem() {
+      this.$emit("click-estudiant", this.codiModel);
     },
   },
 };
