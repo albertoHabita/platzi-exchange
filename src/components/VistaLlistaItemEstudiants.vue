@@ -73,7 +73,6 @@ export default {
 
   methods: {
     clickItem() {
-      console.log("1");
       this.$emit("click-estudiant");
     },
     /*veureDetalls(e, i) {

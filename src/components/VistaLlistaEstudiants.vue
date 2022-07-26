@@ -20,7 +20,7 @@
         :eventManager="eventManager"
         :model="a"
         :coleccio="model"
-        @click-estudiant="veureDetalls(index)"
+        @click-estudiant="veureDetalls(a)"
       />
     </tbody>
   </table>
@@ -56,8 +56,8 @@ export default {
   },
 
   methods: {
-    veureDetalls(i) {
-      this.$emit("click-estudiant", this.model.models[i]);
+    veureDetalls(a) {
+      this.$emit("click-estudiant", a);
     },
 
     goToCoin(id) {
