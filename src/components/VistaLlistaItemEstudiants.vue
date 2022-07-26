@@ -5,7 +5,7 @@
     <td>{{ cognomsEst }}</td>
     <td class="derecha">
       <BotonRojo
-        @click-btn-rojo="eventManager.clickElimina($event)"
+        @click-btn-rojo="eventManager.clickElimina($event, coleccio)"
         :text="textBoton"
         :codiModel="codiModel"
       ></BotonRojo>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { Coleccio } from "@/classes/Coleccio";
+import { Model } from "@/classes/Model";
 import BotonRojo from "@/components/BotonRojo";
 export default {
   name: "VistaLlistaItemEstudiants",
@@ -31,6 +33,7 @@ export default {
   data() {
     return {
       textBoton: "Eliminar", //se podría calcular la etiqueta, por ejemplo
+      modelObject: new Model(this.model),
     };
   },
 
@@ -60,15 +63,24 @@ export default {
       default: () => {},
     },
     model: {
-      type: Object,
+      type: Model,
       default: () => {},
+    },
+    coleccio: {
+      type: Coleccio,
     },
   },
 
   methods: {
     clickItem() {
-      this.$emit("click-estudiant", this.codiModel);
+      console.log("1");
+      this.$emit("click-estudiant");
     },
+    /*veureDetalls(e, i) {
+      console.log(e);
+      console.log(i);
+      //this.$emit("click-estudiant", this.modelObject);
+    },*/
   },
 };
 </script>

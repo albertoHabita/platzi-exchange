@@ -10,26 +10,32 @@
     </thead>
     <tbody>
       <vista-llista-item-estudiants
-        v-for="(a, index) in estudiants"
+        v-for="(a, index) in model.models"
         :key="index"
-        :numDocumentEst="a.num_document_est"
-        :nomEst="a.nom_est"
-        :cognomsEst="a.cognoms_est"
-        :index="estudiants.indexOf(a)"
-        :codiModel="a.id"
+        :numDocumentEst="a.atributs.num_document_est"
+        :nomEst="a.atributs.nom_est"
+        :cognomsEst="a.atributs.cognoms_est"
+        :index="index"
+        :codiModel="a.atributs.id"
         :eventManager="eventManager"
         :model="a"
+        :coleccio="model"
+        @click-estudiant="veureDetalls(index)"
       />
     </tbody>
   </table>
 </template>
 
 <script>
+import { Coleccio } from "@/classes/Coleccio";
+import VistaLlistaItemEstudiants from "@/components/VistaLlistaItemEstudiants";
+
 export default {
   name: "VistaLlistaEstudiants",
 
   components: {
-    VistaLlistaItemEstudiants: () => import("./VistaLlistaItemEstudiants.vue"),
+    //VistaLlistaItemEstudiants: () => import("./VistaLlistaItemEstudiants.vue"),
+    VistaLlistaItemEstudiants,
   },
 
   data() {
@@ -40,9 +46,8 @@ export default {
   },
 
   props: {
-    estudiants: {
-      type: Array,
-      default: () => [],
+    model: {
+      type: Coleccio,
     },
     eventManager: {
       type: Object,
@@ -51,6 +56,10 @@ export default {
   },
 
   methods: {
+    veureDetalls(i) {
+      this.$emit("click-estudiant", this.model.models[i]);
+    },
+
     goToCoin(id) {
       this.$router.push({ name: "coin-detail", params: { id } });
     },

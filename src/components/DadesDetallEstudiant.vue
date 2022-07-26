@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contenido">
     <h2 class="contraer">Dades personals</h2>
 
     <div class="unit six-of-seven primera">

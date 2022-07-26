@@ -2,47 +2,63 @@
   <div class="principal_contenido">
     <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
     <vista-llista-estudiants
-      v-if="!isLoading"
-      :estudiants="estudiants"
+      @click-estudiant="clickDetalls(model)"
+      :model="estudiants"
       :eventManager="eventManager"
     />
+    <dades-detall-estudiant v-if="veureDetall"></dades-detall-estudiant>
   </div>
 </template>
 
 <script>
 import api from "@/api";
+import { EventManager } from "@/classes/EventManager";
+import { Coleccio } from "@/classes/Coleccio";
+import { Model } from "@/classes/Model";
 import VistaLlistaEstudiants from "@/components/VistaLlistaEstudiants";
+import DadesDetallEstudiant from "@/components/DadesDetallEstudiant";
 
 export default {
   name: "HomeView",
 
-  components: { VistaLlistaEstudiants },
+  components: { VistaLlistaEstudiants, DadesDetallEstudiant },
 
   data() {
     return {
       isLoading: false,
-      estudiants: [],
-      eventManager: {
+      estudiants: Coleccio,
+      eventManager: EventManager,
+      model: Model,
+      veureDetall: false,
+      /*eventManager: {
         clickElimina(index) {
           const vIndex = this.estudiants.findIndex(function (valor) {
             return valor.id == index;
           });
-          console.log(vIndex);
           this.estudiants.splice(vIndex, 1);
         },
-        /*veureDetalls(index) {
+        veureDetalls(index) {
           this.estudiants.splice(this.estudiants.indexOf(index), 1);
-        },*/
-      },
+        },
+      },*/
     };
+  },
+
+  methods: {
+    clickDetalls(model) {
+      console.log("3");
+      this.model = model;
+      this.veureDetall = true;
+    },
   },
 
   created() {
     this.isLoading = true;
+    this.eventManager = new EventManager();
+
     api
       .getEstudiants()
-      .then((estudiants) => (this.estudiants = estudiants))
-      .then(() => (this.eventManager.estudiants = this.estudiants))
+      .then((estudiants) => (this.estudiants = new Coleccio(estudiants)))
       .finally(() => (this.isLoading = false));
   },
 };
