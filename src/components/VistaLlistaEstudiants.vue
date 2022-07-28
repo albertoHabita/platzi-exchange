@@ -28,6 +28,7 @@
 
 <script>
 import { Coleccio } from "@/classes/Coleccio";
+
 import VistaLlistaItemEstudiants from "@/components/VistaLlistaItemEstudiants";
 
 export default {

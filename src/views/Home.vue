@@ -2,11 +2,14 @@
   <div class="principal_contenido">
     <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
     <vista-llista-estudiants
-      @click-estudiant="clickDetalls(model)"
+      @click-estudiant="clickDetalls"
       :model="estudiants"
       :eventManager="eventManager"
     />
-    <dades-detall-estudiant v-if="veureDetall"></dades-detall-estudiant>
+    <dades-detall-estudiant
+      :model="model"
+      :v-if="veureDetall"
+    ></dades-detall-estudiant>
   </div>
 </template>
 
@@ -46,7 +49,6 @@ export default {
 
   methods: {
     clickDetalls(model) {
-      console.log("3");
       this.model = model;
       this.veureDetall = true;
     },

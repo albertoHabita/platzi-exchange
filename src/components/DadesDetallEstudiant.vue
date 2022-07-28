@@ -5,26 +5,32 @@
     <div class="unit six-of-seven primera">
       <div class="unit one-of-four primera">
         <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" class="total" value="XAVIER" />
+        <input
+          :value="model.get('nom_est')"
+          type="text"
+          id="nom"
+          name="nom"
+          class="total"
+        />
       </div>
       <div class="unit one-of-four">
         <label for="cognom1">Primer cognom</label>
         <input
+          :value="model.get('cognoms_est')"
           type="text"
           id="cognom1"
           name="cognom1"
           class="total"
-          value="CORRALES"
         />
       </div>
       <div class="unit one-of-four">
         <label for="cognom2">Segon cognom</label>
         <input
+          :value="model.get('cognoms_est')"
           type="text"
           id="cognom2"
           name="cognom2"
           class="total"
-          value="ROVIRA"
         />
       </div>
       <div class="unit one-of-four">
@@ -48,7 +54,7 @@
           id="dni"
           name="dni"
           class="total"
-          value="12345678H"
+          :value="model.get('num_document_est')"
         />
       </div>
       <div class="unit one-of-four">
@@ -745,8 +751,16 @@
 </template>
 
 <script>
+import { Model } from "@/classes/Model";
+
 export default {
   name: "DadesDetallEstudiant",
+  props: {
+    model: {
+      type: Model,
+      default: () => {},
+    },
+  },
 };
 </script>
 

@@ -3,4 +3,7 @@ export class Model {
   constructor(atributs) {
     this.atributs = atributs;
   }
+  get(nomAtribut) {
+    return this.atributs[nomAtribut];
+  }
 }
