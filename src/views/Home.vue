@@ -8,7 +8,7 @@
     />
     <dades-detall-estudiant
       :model="model"
-      :v-if="veureDetall"
+      v-if="veureDetall"
     ></dades-detall-estudiant>
   </div>
 </template>
@@ -60,6 +60,7 @@ export default {
 
   created() {
     this.isLoading = true;
+    this.veureDetall = false;
     this.eventManager = new EventManager();
     api
       .getEstudiants()
