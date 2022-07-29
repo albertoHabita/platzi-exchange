@@ -31,7 +31,7 @@ export default {
       isLoading: false,
       estudiants: Coleccio,
       eventManager: EventManager,
-      model: Model,
+      model: new Model(),
       veureDetall: false,
       /*eventManager: {
         clickElimina(index) {
@@ -49,15 +49,18 @@ export default {
 
   methods: {
     clickDetalls(model) {
-      this.model = model;
-      this.veureDetall = true;
+      const vCodiEst = model.get("id");
+
+      api
+        .getEstudiant(vCodiEst)
+        .then((estudiant) => (this.model = new Model(estudiant)))
+        .finally(() => (this.veureDetall = true));
     },
   },
 
   created() {
     this.isLoading = true;
     this.eventManager = new EventManager();
-
     api
       .getEstudiants()
       .then((estudiants) => (this.estudiants = new Coleccio(estudiants)))

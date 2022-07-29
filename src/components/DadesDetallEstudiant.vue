@@ -6,7 +6,7 @@
       <div class="unit one-of-four primera">
         <label for="nom">Nom</label>
         <input
-          :value="model.get('nom_est')"
+          :value="model.get('nom')"
           type="text"
           id="nom"
           name="nom"
@@ -16,7 +16,7 @@
       <div class="unit one-of-four">
         <label for="cognom1">Primer cognom</label>
         <input
-          :value="model.get('cognoms_est')"
+          :value="model.get('cognom1')"
           type="text"
           id="cognom1"
           name="cognom1"
@@ -26,7 +26,7 @@
       <div class="unit one-of-four">
         <label for="cognom2">Segon cognom</label>
         <input
-          :value="model.get('cognoms_est')"
+          :value="model.get('cognom2')"
           type="text"
           id="cognom2"
           name="cognom2"
@@ -54,7 +54,7 @@
           id="dni"
           name="dni"
           class="total"
-          :value="model.get('num_document_est')"
+          :value="model.get('document_num')"
         />
       </div>
       <div class="unit one-of-four">
@@ -64,7 +64,7 @@
           id="data_alta"
           name="data_alta"
           class="total desactivado"
-          value="21/07/2003"
+          :value="model.get('data_alta')"
           readonly
         />
       </div>
@@ -75,7 +75,7 @@
           id="data"
           name="data"
           class="icono"
-          value="14/09/1985"
+          :value="model.get('data_naix')"
         />
         <img src="img/icono_calendario.png" width="16" height="16" />
       </div>
@@ -114,7 +114,7 @@
           id="comarca"
           name="comarca"
           class="total desactivado"
-          value="MARESME"
+          :value="model.get('comarca_naix')"
         />
       </div>
       <div class="unit one-of-four">
@@ -201,7 +201,7 @@
     <div class="unit one-of-seven">
       <br />
       <img
-        src="img/foto2.jpg"
+        :src="model.get('foto')"
         alt="foto de mi perfil"
         width="100"
         height="120"

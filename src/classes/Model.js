@@ -4,6 +4,7 @@ export class Model {
     this.atributs = atributs;
   }
   get(nomAtribut) {
-    return this.atributs[nomAtribut];
+    if (this.atributs) return this.atributs[nomAtribut];
+    else return null;
   }
 }

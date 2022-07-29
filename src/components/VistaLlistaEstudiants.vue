@@ -12,15 +12,16 @@
       <vista-llista-item-estudiants
         v-for="(a, index) in model.models"
         :key="index"
-        :numDocumentEst="a.atributs.num_document_est"
-        :nomEst="a.atributs.nom_est"
-        :cognomsEst="a.atributs.cognoms_est"
+        :numDocumentEst="a.get('num_document_est')"
+        :nomEst="a.get('nom_est')"
+        :cognomsEst="a.get('cognoms_est')"
         :index="index"
-        :codiModel="a.atributs.id"
+        :codiModel="a.get('atributs.id')"
         :eventManager="eventManager"
         :model="a"
         :coleccio="model"
         @click-estudiant="veureDetalls(a)"
+        :class="{ seleccionada: a.get('id') == entitatActual }"
       />
     </tbody>
   </table>
@@ -43,6 +44,7 @@ export default {
     return {
       filter: "",
       sortOrder: 1,
+      entitatActual: null,
     };
   },
 
@@ -58,6 +60,8 @@ export default {
 
   methods: {
     veureDetalls(a) {
+      this.entitatActual = a.get("id");
+      console.log(this.entitatActual);
       this.$emit("click-estudiant", a);
     },
 
